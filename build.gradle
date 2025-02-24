@@ -31,5 +31,13 @@ dependencies {
 }
 
 application {
-    mainClass = 'com.example.LocalTester'
+    mainClass = 'com.example.LocalTester'  //  Ensures the correct main class is included
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'com.example.LocalTester'  //  Explicitly set the Main-Class
+        )
+    }
 }
