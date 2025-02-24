@@ -2,7 +2,7 @@ PROJECT_NAME = local-dynamodb-tester
 VERSION = 1.0
 JAR_FILE = build/libs/$(PROJECT_NAME)-$(VERSION).jar
 SAMPLE_FILE = src/main/resources/sample-data.json
-TABLE_NAME = MyDynamoDBTable
+TABLE_NAME = common_data_service_poc_2
 AWS_PROFILE = dev  #  Default profile (can be overridden)
 
 .PHONY: all clean build run
