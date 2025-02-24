@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.example'
+version = '1.0'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // AWS SDK for DynamoDB
+    implementation 'software.amazon.awssdk:dynamodb:2.20.121'
+
+    // Netty HTTP Client for Async DynamoDB
+    implementation 'software.amazon.awssdk:netty-nio-client:2.20.121'
+
+    // Jackson for JSON Parsing
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+
+    // SLF4J Logging
+    implementation 'org.slf4j:slf4j-api:2.0.7'
+    implementation 'org.slf4j:slf4j-simple:2.0.7'
+
+    implementation 'org.projectlombok:lombok:1.18.24'  // ✅ Add Lombok dependency
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'  // ✅ Add annotation processor for Lombok
+
+}
+
+application {
+    mainClass = 'com.example.LocalTester'
+}
