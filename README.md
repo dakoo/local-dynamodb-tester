@@ -1,0 +1,1 @@
+# local-dynamodb-tester
