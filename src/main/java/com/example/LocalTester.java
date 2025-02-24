@@ -25,8 +25,7 @@ public class LocalTester {
 
             System.out.println("Loaded " + models.size() + " sample items.");
 
-            EnvironmentConfig config = new EnvironmentConfig(tableName);
-            AsyncDynamoDbWriter writer = new AsyncDynamoDbWriter(DynamoDBClientProvider.getClient(), config);
+            AsyncDynamoDbWriter writer = new AsyncDynamoDbWriter(DynamoDBClientProvider.getClient(), tableName);
 
             CompletableFuture<Void> writeFuture = CompletableFuture.runAsync(() -> writer.executeAsyncWrites(models));
             writeFuture.join();  // Wait for execution to finish

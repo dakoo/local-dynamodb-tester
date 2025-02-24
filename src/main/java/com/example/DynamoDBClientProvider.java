@@ -6,7 +6,7 @@ import software.amazon.awssdk.http.async.SdkAsyncHttpClient;
 
 public class DynamoDBClientProvider {
     private static final SdkAsyncHttpClient asyncHttpClient = NettyNioAsyncHttpClient.builder()
-            .maxConcurrency(200)  // ✅ Allow more concurrent requests
+            .maxConcurrency(200)  // Allow more concurrent requests
             .build();
 
     private static final DynamoDbAsyncClient dynamoDbAsyncClient = DynamoDbAsyncClient.builder()
@@ -14,6 +14,6 @@ public class DynamoDBClientProvider {
             .build();
 
     public static DynamoDbAsyncClient getClient() {
-        return dynamoDbAsyncClient;  // ✅ Return the singleton client
+        return dynamoDbAsyncClient;  // Return the singleton client
     }
 }
